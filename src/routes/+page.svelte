@@ -1,30 +1,13 @@
 <script>
-  import Counter from "./Counter.svelte";
-  import welcome from "$lib/images/svelte-welcome.webp";
-  import welcome_fallback from "$lib/images/svelte-welcome.png";
+  import Counter from "$lib/components/home/Counter.svelte";
 </script>
 
 <svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>Jimmy Wu</title>
+  <meta name="description" content="This is jimmy's portfolio" />
 </svelte:head>
 
 <section>
-  <h1 class="text-3xl font-bold underline">
-    <span class="welcome">
-      <picture>
-        <source srcset={welcome} type="image/webp" />
-        <img src={welcome_fallback} alt="Welcome" />
-      </picture>
-    </span>
-
-    to your new<br />SvelteKit app
-  </h1>
-
-  <h2 class="">
-    try editing <strong>src/routes/+page.svelte</strong>
-  </h2>
-
   <Counter />
 </section>
 

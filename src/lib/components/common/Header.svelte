@@ -1,35 +1,59 @@
-<script>
+<script lang="ts">
   import { page } from "$app/stores";
-  import logo from "$lib/images/svelte-logo.svg";
-  import github from "$lib/images/github.svg";
-  import Linkedin from "$lib/images/linkedin-logo.svg";
+  let checked = false;
+  import GithubIcon from "$lib/components/icons/Github.svelte";
+  import LinkedInIcon from "$lib/components/icons/LinkedIn.svelte";
+  import ResumeIcon from "$lib/components/icons/Resume.svelte";
+  import ThemeToggle from "$lib/components/common/ThemeToggle.svelte";
 </script>
 
-<header class="bg-white flex justify-between">
+<header
+  class="bg-transparent flex justify-between shadow-lg px-2 dark:text-white"
+>
   <div class="flex items-center space-x-2">
     <a
       href="https://github.com/Jimmywu987"
       target="_blank"
-      class="flex items-center justify-centerw-10 h-10"
+      class="flex items-center justify-center w-8 h-8"
     >
-      <img src={github} alt="GitHub icon" class="w-8 h-8 object-contain" />
+      <GithubIcon bind:checked />
     </a>
-
     <a
       href="https://www.linkedin.com/in/jimmy-wu-11358ab9/"
       target="_blank"
-      class="flex items-center justify-centerw-10 h-10"
+      class="flex items-center justify-center w-8 h-8"
     >
-      <img src={Linkedin} alt="GitHub icon" class="w-7 h-7 object-contain" />
+      <LinkedInIcon bind:checked />
+    </a>
+
+    <a
+      href="/Jimmy-CV.pdf"
+      class="flex items-center justify-center w-8 h-7"
+      download
+    >
+      <ResumeIcon bind:checked />
     </a>
   </div>
-  <nav>
+  <nav class="flex items-center">
     <ul>
       <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
-        <a href="/">Home</a>
+        <a href="/">HOME</a>
       </li>
       <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
-        <a href="/about">About</a>
+        <a href="/about">ABOUT</a>
+      </li>
+      <li
+        aria-current={$page.url.pathname === "/experience" ? "page" : undefined}
+      >
+        <a href="/experience">EXPERIENCE</a>
+      </li>
+      <li
+        aria-current={$page.url.pathname === "/projects" ? "page" : undefined}
+      >
+        <a href="/projects">PROJECTS</a>
+      </li>
+      <li aria-current={$page.url.pathname === "/contact" ? "page" : undefined}>
+        <a href="/contact">GET IN TOUCH</a>
       </li>
       <li
         aria-current={$page.url.pathname.startsWith("/sverdle")
@@ -39,6 +63,7 @@
         <a href="/sverdle">Sverdle</a>
       </li>
     </ul>
+    <ThemeToggle bind:checked />
   </nav>
 </header>
 
@@ -68,7 +93,7 @@
 
   li {
     position: relative;
-    height: 100%;
+    height: 80%;
   }
 
   li[aria-current="page"]::before {
@@ -88,7 +113,6 @@
     height: 100%;
     align-items: center;
     padding: 0 0.5rem;
-    color: var(--color-text);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;

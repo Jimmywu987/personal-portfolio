@@ -3,19 +3,25 @@
 
   const darkModeColor = "rgba(255,255,255,1)";
   const lightModeColor = "rgba(0,0,0,0.7)";
+  const themeColor = "#ff3e00";
+  let isHover = false;
 </script>
 
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg
-  fill={checked ? darkModeColor : lightModeColor}
-  width="800px"
-  height="800px"
+  fill={isHover ? themeColor : checked ? darkModeColor : lightModeColor}
   viewBox="0 0 946.66 946.66"
   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
   version="1.1"
   xml:space="preserve"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
+  on:mouseenter={() => {
+    isHover = true;
+  }}
+  on:mouseleave={() => {
+    isHover = false;
+  }}
 >
   <g id="Layer_x0020_1">
     <path

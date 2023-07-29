@@ -21,16 +21,19 @@
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark");
   }
+
+  $: modeText = checked ? "Dark" : "Light";
 </script>
 
-<div class="s s--slider space-x-1">
+<div class="s s--slider space-x-2">
   <button
+    class="border border-gray-100 bg-white p-2"
     role="switch"
     aria-checked={checked}
     aria-labelledby={`switch-${uniqueID}`}
     on:click={handleClick}
   />
-  <span id={`switch-${uniqueID}`}>{"ABC"}</span>
+  <span id={`switch-${uniqueID}`}>{modeText} mode</span>
 </div>
 
 <style>
@@ -40,11 +43,6 @@
   }
   /* Inner Design Option */
 
-  .s--inner button {
-    padding: 0.5em;
-    background-color: #fff;
-    border: 1px solid var(--gray);
-  }
   [role="switch"][aria-checked="true"] :first-child,
   [role="switch"][aria-checked="false"] :last-child {
     display: none;

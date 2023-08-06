@@ -1,14 +1,16 @@
 <script lang="ts">
   import { page } from "$app/stores";
+
   import ThemeToggle from "$lib/components/common/nav/ThemeToggle.svelte";
-  import NavLinkItem from "./NavLinkItem.svelte";
+
+  import NavLinkItem from "$lib/components/common/nav/DesktopNavLinkItem.svelte";
 
   export let checked: boolean;
 </script>
 
 <div class="hidden lg:flex items-center space-x-1">
   <ul
-    class="relative p-0 m-0 flex items-center justify-center h-12 bg-contain list-none"
+    class="relative p-0 m-0 flex items-center justify-center h-12 bg-contain list-none space-x-2"
   >
     <NavLinkItem NavText="HOME" path="/" />
     <NavLinkItem NavText="ABOUT" path="/about" />
@@ -26,18 +28,6 @@
   li {
     position: relative;
     height: 80%;
-  }
-
-  li[aria-current="page"]::before {
-    --size: 6px;
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: calc(50% - var(--size));
-    border: var(--size) solid transparent;
-    border-top: var(--size) solid var(--color-theme-1);
   }
 
   div a {

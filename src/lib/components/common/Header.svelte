@@ -9,7 +9,7 @@
 
   export let isOpen: boolean;
 
-  let checked = false;
+  let checked = true;
 </script>
 
 <header
@@ -41,7 +41,7 @@
   </div>
   <nav class="flex items-center">
     <DesktopNavItems bind:checked />
-    <MobileNavItems />
+    <MobileNavItems bind:checked />
   </nav>
 </header>
 

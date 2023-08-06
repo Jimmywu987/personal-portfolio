@@ -1,17 +1,14 @@
 <script lang="ts">
   export let checked: boolean;
 
-  const darkModeColor = "rgba(255,255,255,1)";
-  const lightModeColor = "rgba(0,0,0,0.7)";
   const themeColor = "#ff3e00";
   let isHover = false;
 </script>
 
 <svg
-  fill={isHover ? themeColor : checked ? darkModeColor : lightModeColor}
+  class="hover:dark:fill-theme-color hover:fill-theme-color fill-light-text dark:fill-dark-text transition-colors ease-linear duration-200"
   viewBox="0 0 1024 1024"
   xmlns="http://www.w3.org/2000/svg"
-  class="icon"
   on:mouseenter={() => {
     isHover = true;
   }}

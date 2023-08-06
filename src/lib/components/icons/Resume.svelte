@@ -1,15 +1,13 @@
 <script lang="ts">
   export let checked: boolean;
 
-  const darkModeColor = "rgba(255,255,255,1)";
-  const lightModeColor = "rgba(0,0,0,0.7)";
   const themeColor = "#ff3e00";
   let isHover = false;
 </script>
 
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg
-  fill={isHover ? themeColor : checked ? darkModeColor : lightModeColor}
+  class="hover:fill-theme-color hover:dark:fill-theme-color fill-light-text dark:fill-dark-text transition-colors ease-linear duration-200 icon"
   viewBox="0 0 946.66 946.66"
   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
   version="1.1"

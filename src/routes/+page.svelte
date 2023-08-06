@@ -1,5 +1,5 @@
 <script>
-  import Counter from "$lib/components/home/Counter.svelte";
+  import Introduction from "$lib/components/home/Introduction.svelte";
 </script>
 
 <svelte:head>
@@ -7,9 +7,7 @@
   <meta name="description" content="This is jimmy's portfolio" />
 </svelte:head>
 
-<section class="flex flex-col justify-center items-center">
-  <Counter />
-</section>
+<Introduction />
 
 <style>
 </style>

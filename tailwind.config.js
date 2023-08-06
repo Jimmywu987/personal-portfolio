@@ -11,7 +11,19 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dark: {
+          text: "#f8fdfe",
+        },
+        light: {
+          text: "#000000b3",
+        },
+        theme: {
+          color: "#ff3e00",
+        },
+      },
+    },
   },
   plugins: [
     // 3. Append the Skeleton plugin to the end of this list

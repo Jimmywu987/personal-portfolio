@@ -2,11 +2,10 @@
   export let tag: string;
   export let attribute: string;
   export let attributeValue: string;
-  export let classAttribute = "";
 </script>
 
 <span>
-  <span class={"dark:text-[#7d7d7d] text-[#75140c] text-base " + classAttribute}
+  <span class={"dark:text-[#7d7d7d] text-[#75140c] text-base lg:ml-10 "}
     >&#60;</span
   ><span class="dark:text-[#5d88b9] text-[#75140c]">{tag}</span>
   <span class="dark:text-[#a4d3f2] text-[#d22d1f]">{attribute}</span><span
